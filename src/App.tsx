@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
@@ -19,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          
+
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
@@ -30,7 +29,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
-        <Toaster position="top-right" 
+        <Toaster position="top-right"
           toastOptions={{
             style: {
               background: 'hsl(var(--card))',
